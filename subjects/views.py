@@ -5,4 +5,7 @@ from subjects.models import *
 
 class SubjectList(ListView):
     model = Subject
+    context_object_name = 'subjects_list'
+    queryset = Subject.objects.all().order_by('-created_at')
+    template_name = 'subjects/lecture_list.html'
 

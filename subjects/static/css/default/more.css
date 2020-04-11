@@ -1,0 +1,23 @@
+.more-container {
+    text-align: center;
+}
+.more-btn {
+    text-align: center;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+    width: 15rem;
+    height: 4rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: tomato;
+    color: whitesmoke;
+    transition: 0.5s;
+    border-radius: 1.2rem;
+}
+
+.more-btn:hover {
+    border-radius: 1.2rem;
+    width: 20rem;
+    color: teal;
+    background-color: wheat;
+}

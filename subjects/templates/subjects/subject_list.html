@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
-
+    <ul>
+    {% for subject in subjects_list %}
+        <li>{{ subject.name }}</li>
+        <img src="{{ subject.sub_image.url }}" alt="">
+    {% endfor %}
+    </ul>
 </body>
 </html>

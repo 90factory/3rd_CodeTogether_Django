@@ -1,0 +1,6 @@
+.footer {display: flex;}
+
+.footer-items { height: 5rem; width: 100%; margin-top: auto; padding-top: 0.5rem; padding: auto; background-color: teal; text-align: center;}
+.footer-logo { font-size: 1rem;}
+.footer-logo > a { color:wheat }
+.footer-rights { font-size: 0.6rem; margin-top: 0.2rem; color: whitesmoke;}

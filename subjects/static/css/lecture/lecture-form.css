@@ -1,0 +1,17 @@
+.lecture-form-entire { height: 100vh;}
+.lecture-form-container { display: flex; flex-direction: column; width: 65rem; margin: 0 auto; background-color: crimson; color:wheat} 
+.lecture-form-container > h1 { margin: 2rem auto; text-align: center; border: springgreen solid 2px; width: 40rem; height: 3rem; padding: 0.5rem;}
+.lecture-form-container > h1 > div { margin-top: 0.5rem;}
+
+.lecture-form-item { margin: 2rem 0 1rem 4rem; }
+.lecture-form-item h1 { margin-bottom: 1rem;}
+
+.lecture-form-item svg { margin-right: 1rem;}
+
+.lecture-form-item-subtitle label { font-size: 1.2rem; font-weight: bold; margin-bottom: 5rem;}
+.lecture-form-item-subtitle { margin-left: 5rem; line-height: 2.5rem; }
+
+/* .lecture-form-item-subtitle */
+.lecture-form-item-subtitle p { font-size: 1.1rem;}
+
+.lecture-form-item-subtitle input[type=text], .lecture-form-item-subtitle input[type=textarea] { background-color: springgreen;}

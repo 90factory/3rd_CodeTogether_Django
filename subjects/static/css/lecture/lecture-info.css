@@ -1,0 +1,26 @@
+.lecture-info-container { margin: 0 auto; display: flex; flex-direction: row; justify-content: center; align-items: center; width: 65rem; height: 100%; background-color:wheat;}
+
+.lecture-info-items { display: flex; flex-direction: column; justify-content: center; width: 50%;}
+
+.lecture-info-item { background-color: darkgrey; border: darkmagenta solid 1px; height: 30rem;}
+
+.lecture-info-item > div { display: flex; }
+
+.lecture-photo { margin: 6rem auto 0 auto; width: 25rem; height: 13rem;}
+
+.lecture-info-price { display: flex; flex-direction: row; align-items: center; justify-content: space-between; margin: 0rem auto; text-align: center; width: 25rem; height: 3rem;}
+
+.lecture-info-price > div { width: 12rem; font-size: 1.2rem; color: crimson; font-weight: bold;}
+.lecture-info-price > button { border-radius: 0.5rem; background-color: teal; color: whitesmoke; width: 12rem; padding: 0.5rem; font-size: 1rem; font-weight: bold; animation: 0.3s;}
+.lecture-info-price > button:hover { width: 15rem; background-color: crimson; color: cornsilk;}
+
+.lecture-info-subitem { display: flex; flex-direction: column; margin: 2rem;}
+
+.lecture-info-subitem > h3 { font-size: 2rem; margin: 2rem 0}
+.lecture-info-subitem > div { display: flex; flex-direction: column; }
+.lecture-info-subitem > div > ul { margin: 2rem 1rem; display: flex; flex-direction: column;}
+.lecture-info-subitem > div > ul > li:nth-child(2n) { margin-left: 4rem; font-size: 1.5rem; font-weight: bold; }
+.lecture-info-subinfo { font-size: 1.5rem; margin-bottom: 1rem;}
+.lecture-info-spac { display: flex; flex-direction: row;}
+.lecture-info-spac > li { margin-right: 1.2rem; }
+.lecture-info-spac > span { font-size: 1.2rem; }
