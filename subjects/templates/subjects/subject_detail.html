@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/default/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lecture/lecture-info.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    
+    <title>강의정보</title>
+</head>
+<body>
+    <section class="lecture-info-entire">
+        <div class="lecture-info-container">
+
+            <div class="lecture-info-items">
+                <div class="lecture-info-item">
+                    <div class="lecture-info-card">
+                        <div class="lecture-photo-box">
+                            <img class="lecture-photo" src="{{ subject.sub_image.url }}">
+                        </div>
+                        <div class="lecture-info-price">
+                            <div>강의료: <span id="lecture-info-price">{{ subject.price }}</span><span><i class="fas fa-grin-hearts"></i></span><span><i class="fas fa-shopping-basket"></i></span></div>
+                            <button>결제하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lecture-info-items">               
+                <div class="lecture-info-item">
+                    <div class="lecture-info-subitem">
+                        <h3><span><i class="fas fa-info-circle"></i></span> 강사정보</h3>
+                        <div>
+                            <ul>
+                                <li class="lecture-info-subinfo"><i class="fas fa-paperclip"></i> 강사명:</li>
+                                <li id="lecture-info-nameT">{{ subject.teacher }}</li>
+                            </ul>
+                            <ul>
+                                <li class="lecture-info-subinfo"><i class="fas fa-paperclip"></i> 강사소개:</li>
+                                <li id="lecture-info-descT">{{ subject.teacher.subject_teacher.introduce }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lecture-info-item">
+                    <div class="lecture-info-subitem">
+                        <h3><span><i class="fas fa-info-circle"></i></span> 강의정보</h3>
+                        <ul>
+                            <li class="lecture-info-subinfo"><i class="fas fa-paperclip"></i> 강의명: </li><span id="lecture-info-titleL">{{ subject.name }}</span>
+                            <div class="lecture-info-spac">
+                                <li class="lecture-info-subinfo"><i class="fas fa-keyboard"></i> 언  어: </li>
+                                <span id="lecture-info-lagL">{{ subject.language }}</span>
+                                <li class="lecture-info-subinfo"><i class="fas fa-award"></i> 난이도: </li>
+                                <span id="lecture-info-levelL">{{ subject.difficulty }}</span>
+                            </div>
+                        </ul>
+                        <ul>
+                            <li class="lecture-info-subinfo"><i class="fas fa-paperclip"></i> 강의소개:</li>
+                            <li>{{ subject.description }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="lecture-info-item">
+                    <div class="lecture-info-subitem">
+                        <h3><span><i class="fas fa-info-circle"></i></span> 교육과정</h3>
+                        <ul>
+                            <li class="lecture-info-subinfo">1강: <span class="curriculum-title">소개</span></li>
+                            <li class="lecture-info-subinfo">2강: <span class="curriculum-title">몰라</span></li>
+                            <li class="lecture-info-subinfo">3강: <span class="curriculum-title">어려운거</span></li>
+                            <li class="lecture-info-subinfo">4강: <span class="curriculum-title">자바는 어렵지</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>

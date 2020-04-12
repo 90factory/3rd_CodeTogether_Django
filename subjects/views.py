@@ -1,11 +1,39 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+from django.views import View
 from subjects.models import *
+from subjects.forms import SubjectForm
 # Create your views here.
 
 class SubjectList(ListView):
     model = Subject
     context_object_name = 'subjects_list'
     queryset = Subject.objects.all().order_by('-created_at')
-    template_name = 'subjects/lecture_list.html'
+    template_name = 'subjects/subject_list.html'
+
+
+class SubjectDetail(DetailView):
+    model = Subject
+    context_object_name = 'subject'
+    template_name = 'subjects/subject_detail.html'
+
+
+class SubjectCreate(View):
+    def get(self, request):
+        form = SubjectForm()
+        return render(request, 'subjects/lecture_form.html', {'form': form})
+
+    def post(self, request):
+        name = request.POST['name']
+        difficulty = request.POST['difficulty']
+        rating = request.POST['rating']
+        price = request.POST['price']
+        description = request.POST['description']
+        language = request.POST['language']
+        sub_image = request.POST['sub_image']
+        sub_video = request.POST['sub_video']
+
+
+
+
 

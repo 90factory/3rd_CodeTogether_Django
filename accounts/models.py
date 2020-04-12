@@ -35,8 +35,9 @@ def teacher_path(instance, filename):
 
 
 class Teacher(models.Model):
-    member_id = models.OneToOneField(Member, on_delete=models.CASCADE, primary_key=True)
+    member_id = models.OneToOneField(Member, on_delete=models.CASCADE, primary_key=True, related_name='subject_teacher')
     image = models.ImageField(upload_to=teacher_path)
+    introduce = models.TextField(blank=True)
 
     def __str__(self):
         return str(self.member_id)

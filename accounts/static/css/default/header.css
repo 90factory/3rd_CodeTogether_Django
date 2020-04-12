@@ -1,0 +1,9 @@
+.header { display: flex; height: 4rem; background-color: teal; width: 100vw;}
+
+.header-logo { text-align: center; margin: auto 0 auto 6rem; padding-top: auto; padding-bottom: auto; font-size: 1.2rem;}
+.header-logo > a, .header-nav-item > a {color:wheat}
+.header-crown {color:tomato}
+
+.header-nav {margin: auto 6rem auto auto;}
+.header-nav-items { display: flex; justify-content: space-between ; width: 14rem; font-size: 1rem;}
+.header-div {color: whitesmoke}

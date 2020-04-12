@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의정보 입력</title>
+    <link rel="stylesheet"  href="{% static 'css/default/default.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/lecture/lecture-form.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+</head>
+<body>
+
+    <section class="lecture-form-entire">
+        <div class="lecture-form-container">
+            <h1 id="lecture-form-type"><div></div></h1>
+            <form class="lecture-form-items" id="LectureFrom">
+                
+                <div class="lecture-form-item">
+                    <h1><span><i class="fas fa-info-circle"></i></span>강의정보: </h1>
+                    
+                    <div class="lecture-form-item-subtitle" id="Ltitle">
+                        <div class="lecture-titles">
+                            <label for="lecture-title"><i class="far fa-caret-square-right"></i>강의명</label>
+                        </div>
+                            <input type="text" id="lecture-title" name="lecture-title" required>
+                    </div>
+
+                        <div class="lecture-form-item-subtitle" id="Lphoto">
+                            <div class="lecture-titles">
+                                <label for="lecture-photo"><i class="far fa-caret-square-right"></i>강의사진</span></label>
+                            </div>
+                                <input type="file" id="lecture-photo" name="lecture-photo" required>
+                        </div>
+
+                        <div class="lecture-form-item-subtitle" id="Lprice">
+                            <div class="lecture-titles">
+                                <label for="lecture-price"><i class="far fa-caret-square-right"></i>강의료</label>
+                            </div>
+                                <input type="text" id="lecture-price" name="lecture-price" required>
+                        </div>
+                        
+                        <div class="lecture-form-item-subtitle" id="Llanguage">
+                            <p>
+                                <i class="fas fa-keyboard"></i>언어:
+                            </p>
+                            <div class="lecture-langs">
+                                <label for="lecture-lang" class="lecture-lang">
+                                    <input type="checkbox" name="lecture-lang" value="Java">
+                                Java</label>
+                                <label for="lecture-lang" class="lecture-lang">
+                                    <input type="checkbox" name="lecture-lang" value="Javascript">
+                                Javascript</label>
+                                <label for="lecture-lang" class="lecture-lang">
+                                    <input type="checkbox" name="lecture-lang" value="Python">
+                                Python</label>
+                            </div>
+                        </div>
+
+                        <div class="lecture-form-item-subtitle" id="Llevel">
+                            <p>
+                                <i class="fas fa-award"></i>난이도:
+                            </p>
+                            <div class="lecture-langs">
+                                <label for="lecture-level" class="lecture-level">
+                                    <input type="radio" name="lecture-level" value="A">
+                                입문</label>
+                                <label for="lecture-level" class="lecture-level">
+                                    <input type="radio" name="lecture-level" value="B">
+                                중급</label>
+                                <label for="lecture-level" class="lecture-level">
+                                    <input type="radio" name="lecture-level" value="C">
+                                고급</label>
+                            </div>
+                        </div>
+
+                        <div class="lecture-form-item-subtitle" id="Ldesc">
+                            <div class="lecture-titles">
+                                <label for="lecture-desc"><i class="far fa-caret-square-right"></i>강의소개</label>
+                            </div>
+                                <textarea type="textarea" name="lecture-desc" id="lecture-desc">
+                                </textarea>
+                        </div>
+                </div>
+
+
+                
+                <div class="lecture-form-item">
+                    <h1><span><i class="fas fa-info-circle"></i></span>교육과정: </h1>
+                    
+                    <div class="lecture-form-item-subtitle" id="Lcurriculum">
+                        <div class="lecture-titles">
+                            <label for="lecture-curriculum">1주차:</label>
+                        </div>
+                            <input type="text" id="videoTitle" name="lecture-curriculum-title">
+                            <input type="file" id="videofile" name="lecture-curriculum-video">
+                    </div>
+                
+                </div>
+
+                <div class="lecture-form-item">
+                    <h1><span><i class="fas fa-info-circle"></i></span>강사정보: </h1>
+                
+                    <div class="lecture-form-item-subtitle" id="Ttitle">
+                        <div class="lecture-titles">
+                            <label for="lecture-form-teacher-name"><i class="far fa-caret-square-right"></i>강사명</label>
+                        </div>
+                            <input type="text" name="lecture-form-teacher-name" id="title" required>
+                    </div>
+
+                    <div class="lecture-form-item-subtitle" id="Ldesc">
+                        <div class="lecture-titles">
+                            <label for="lecture-form-teacher-desc"><i class="far fa-caret-square-right"></i>강사 소개</label>
+                        </div>
+                            <textarea type="textarea" id="desc" name="lecture-form-teacher-desc"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <button id="submitbtn">등록하기</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+<script>
+
+class TypeOfTitle {
+    type = '';
+    title = document.querySelector('#lecture-form-type');
+    submit = document.querySelector('#submitbtn');
+    setTitle = (title, subtitle) => {
+        if (this.type === "signup") {
+            this.title.innerText = title;
+            this.submit.innerText = subtitle;
+        } else { this.title.innerText = title;
+                this.submit.innerText = subtitle}
+    }
+}
+
+const b = new TypeOfTitle;
+// b.setTitle(`수정할 내용을 적어주세요`, `수정하기`);
+b.setTitle(`강의등록`, `등록하기`);
+
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+
+    <link rel="stylesheet" href="{% static 'css/default/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mypage/mypage.css' %}">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+    <script src="mustache.min.js"></script>
+    <script type="text/x-mustache" id="mustache"></script>
+
+</head>
+<body>
+    <section class="mypage-section-entire">
+        <div class="mypage-section-container">
+            <div class="mypage-item">
+                <div class="mypage-profile-box">
+                    <div><i class="fas fa-user-circle"></i></div>
+                    <!-- 정보수정 클릭 시 signup-form.html 로 연결 -->
+                    <p> {{ context.member }}님<br> 오늘도 즐겁게 학습하세요! </p>
+                    <button class="mypage-btn">내 정보 수정 <i class="fas fa-pen-square"></i></button>
+                </div>
+            </div>
+            <div id="mypage-edit-form"></div>
+            <div class="mypage-item">
+                <div class="maypage-lectures-lists-box">
+                    <h1>학습 강의목록</h1>
+                    <div class="mypage-lectures-lists">
+                        <ul>
+                            {% for subject in context.subject_list %}
+                            <li><a href="#"><span><i class="fas fa-arrow-circle-right"></span></i>{{ subject.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+<script>
+
+
+</script>

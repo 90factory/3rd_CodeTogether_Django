@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from accounts.models import Member
 from imagekit.models import ImageSpecField
 from imagekit.processors import Thumbnail
@@ -29,6 +30,9 @@ class Subject(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     teacher = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='my_lectures')
     student = models.ManyToManyField(Member, through='ClassRoom', related_name='subjects')
+
+    def get_absolute_url(self):
+        return reverse('subjects:subject_detail', args=[self.id])
 
     class Meta:
         db_table = 'subjects'

@@ -1,0 +1,24 @@
+#header > object {
+    width: 100%;
+    height: 8vh;
+}
+
+#main > object {
+    width: 100%;
+    height: 79vh;
+}
+
+#lecture-search > object {
+    width: 100%;
+    height: 79vh;
+}
+
+
+#footer > object {
+    width: 100%;
+    height: 13vh;
+}
+
+a:hover {
+    list-style: none;
+}

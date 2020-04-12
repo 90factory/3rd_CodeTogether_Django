@@ -1,15 +1,44 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>강의검색</title>
+    <link rel="stylesheet" href="{% static 'css/default/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default/more.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lecture/lecture-search.css' %}">
+
 </head>
 <body>
-    <ul>
-    {% for subject in subjects_list %}
-        <li>{{ subject.name }}</li>
-        <img src="{{ subject.sub_image.url }}" alt="">
-    {% endfor %}
-    </ul>
+    <section class="lecture-search-entire">
+        <div class="lecture-search-container">
+            <form class="lecture-search-form">
+                <input type="search">
+                <button type="submit">🔍</button>                
+            </form>
+
+            <div class="lecture-search-items">
+                {% for subject in subjects_list %}
+                <div class="lecture-search-item">
+                    <a href="{{ subject.get_absolute_url }}">
+
+                        <img class="lecture" src="{{ subject.sub_image.url }}" alt="인기강의1">
+                        <div class="lecture-title">
+                            {{ subject.name }}
+                            {{ subject.teacher }}
+                            {{ subject.difficulty }}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="more-container">
+                <button class="more-btn">👨‍💻강의 더 보기👩🏽‍💻</button>
+            </div>
+        </div>
+
+    </section>    
 </body>
 </html>
