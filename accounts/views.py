@@ -32,13 +32,4 @@ class MyPageView(View):
             return render(request, 'accounts/mypage.html', {'context': context})
 
 
-def test(request):
-    member_id = 1
-    params = {'member_id': member_id}
-    params = json.dumps(params)
-    print(type(params))
-    r = requests.post(url='http://localhost:9000/create/', data=params)
-    print('hi')
-    print(r.json())
-    print(r.url)
-    return HttpResponse('success')
+

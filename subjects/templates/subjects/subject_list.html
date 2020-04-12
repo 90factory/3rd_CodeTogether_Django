@@ -14,13 +14,13 @@
 <body>
     <section class="lecture-search-entire">
         <div class="lecture-search-container">
-            <form class="lecture-search-form">
-                <input type="search">
+            <form action="" class="lecture-search-form">
+                <input name="value" type="search">
                 <button type="submit">🔍</button>                
             </form>
 
             <div class="lecture-search-items">
-                {% for subject in subjects_list %}
+                {% for subject in subject_list %}
                 <div class="lecture-search-item">
                     <a href="{{ subject.get_absolute_url }}">
 

@@ -5,5 +5,4 @@ app_name='accounts'
 
 urlpatterns = [
     path('', MyPageView.as_view(), name='mypage'),
-    path('test/', test, name='test')
 ]
