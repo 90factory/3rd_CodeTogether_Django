@@ -8,7 +8,11 @@ payScreen.style.display='none';
 
 const payBtn = document.querySelector('#payBtn');
 const toPayBtn = document.querySelector('#priceBtn');
+const exitBtn = document.querySelector('#exitBtn');
 
+exitBtn.addEventListener('click', () => {
+    payScreen.style.display='none';
+});
 const calc = (price, _money, money) => {
     let dif = _money - price;
     console.log(dif,'dif');
