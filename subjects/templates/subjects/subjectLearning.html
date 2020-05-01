@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>강의화면</title>
+        <link rel="stylesheet" href="{% static 'css/default.css' %}">
+        <link rel="stylesheet" href="{% static 'css/lecture-learning.css' %}">
+        <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    </head>
+    <body>
+        <section class="lecture-learning-entire">
+            <div class="lecture-learning-container">
+                <div class="lecture-learning-item">
+                    <h1><i class="fas fa-chevron-left"></i> {{ lecture }} <i class="fas fa-chevron-right"></i></h1>
+                    <button onclick="location.href='/'">마치기</button>
+                </div>
+                <div class="lecture-learning-item" id="lecture-learning-item">
+                    <div class="lecture-learning-lists">
+                        <ul>
+                            {% for key, val in lecture_info.items %}
+                            <li id="{{ val }}"><span><i class="far fa-dot-circle"></i></span>{{ key }}</li>
+                            {% endfor %}
+
+                        </ul>
+                    </div>
+                    <div class="lecture-learning-screen">
+                        <div class="main-video-container" name="video1" style="text-align: center">
+                            <!-- 리스트 클릭 시 해당 영상 보이게 하기 -->
+                            <object type="text/html" class="main-video-container-item" data="{{ video }}" allowfullscreen=""></object>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="module" src="{% static 'js/subjectLearning.js' %}"></script>
+</html>
+

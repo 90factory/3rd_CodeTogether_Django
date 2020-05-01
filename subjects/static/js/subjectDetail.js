@@ -1,0 +1,77 @@
+import Ajax from './ajax.js'
+const payment_Ajax = new Ajax();
+
+
+
+const payScreen = document.querySelector('.modal-container');
+payScreen.style.display='none';
+
+const payBtn = document.querySelector('#payBtn');
+const toPayBtn = document.querySelector('#priceBtn');
+
+const calc = (price, _money, money) => {
+    let dif = _money - price;
+    console.log(dif,'dif');
+    let msg = '';
+    if(dif < 0) {
+        dif = Math.abs(dif).toLocaleString();
+        msg = `🚩${dif}금액이 부족합니다. 결제를 다시 진행하세요.🚩`
+        alert(msg);
+        money.value = '';
+
+    }else if(dif === 0) {
+        payment_Ajax.send('post', {price:`${_money}`}, 'pay/')
+        .then((result, status, response) => {
+
+            // result:1
+            // result:-1
+            //result:-2 location.href='/'
+            msg = `👩 💻결제가 완료되었습니다. 즐겁게 학습하세요!👨🏻 💻`
+            alert(msg);
+            money.value = '';
+            location.href = '/' //마이페이지
+            })
+
+    }else if(dif > 0) {
+        payment_Ajax.send('post', {price:`${_money}`}, 'pay/')
+        .then((result, status, response) => {
+            msg = `🎁잔액은 ${dif}원 입니다. 즐겁게 학습하세요!👨🏻 💻`
+            alert(msg);
+            money.value = '';
+            location.href = '/'
+        })
+    }
+
+
+}
+
+
+const getMoney = (price) => {
+    const money = document.querySelector('#inputPrice');
+    const toPayBtn = document.querySelector('#priceBtn');
+    
+    toPayBtn.addEventListener('click', (e) => {
+        console.log('이벤트 되는거 맞아?')
+        event.preventDefault();
+        const _money = Number(money.value);
+        calc(price, _money, money)
+    })
+}
+
+const init = () => {
+payBtn.addEventListener('click', (e) => {
+    console.log('일단 여기는 ok')
+    event.preventDefault();
+    let _price = document.getElementById('lecture-info-price').innerText;
+    _price = _price.replace(',', '');
+    payScreen.style.display='';
+    const price = Number(_price);
+    console.log(price);
+    console.log(payScreen,'payScreen')
+    getMoney(price)
+    
+    
+})
+}
+
+init()

@@ -1,0 +1,7 @@
+.mypage-profile-box {
+    height: 28rem;
+}
+
+.mypage-lectures-lists ul li > button {
+    margin-left: 0.3rem; border-radius: 0.3rem; width: 3rem; background-color: teal; color: white; font-weight: bold; height: 1.5rem; text-align: center; 
+}

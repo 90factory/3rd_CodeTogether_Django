@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rePw.css' %}">
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+    <title>Code_together</title>
+</head>
+<body>
+<header class="header">
+    <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+    <nav class="header-nav" id="nav-for-member">
+        <ul class="header-nav-items">
+            <li class="header-nav-item">
+                <button onclick="location.href='/'">HOME</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href=''">LECTURE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/'">MYPAGE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button id="logOut" onclick="location.href='logout/'">LOG OUT
+                    <button>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<div class="re-password">
+    <div class="re-password-info-1" id="re-password-info-1">
+        <div class="notice">
+            <h1><i class="fas fa-lock"></i>비밀번호 찾기</h1>
+            <p>비밀번호가 기억나지 않아 답답하시죠?</p>
+            <p>가입된 이메일을 입력하시면, 비밀번호를 재설정 할 수 있습니다!</p>
+            <p id="att"></p>
+            <form class="re-password-email">
+                <div id="notice-share"></div>
+                <div class="notice-share">
+                    <div>
+                        <label for="re-password-email">이메일 주소</label>
+                    </div>
+                    <input type="text" name="re-password-email" id="email">
+                </div>
+                <button type="submit" id="submit-pw-btn" name="re-password-email-btn">다음단계</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a>
+            </h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'js/rePw.js' %}"></script>
+</html>

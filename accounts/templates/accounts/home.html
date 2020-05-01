@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'css/default.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/mainPage.css' %} ">
+    <link rel="stylesheet"  href="{% static 'css/teacherForm.css' %}">
+    
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/mainSwiper.css' %}">
+
+
+<!--     <link rel="stylesheet"  href="../css/default.css">-->
+<!--     <link rel="stylesheet"  href="../css/header_footer.css">-->
+<!--     <link rel="stylesheet"  href="../css/mainPage.css ">-->
+<!--     <link rel="stylesheet"  href="../css/teacherForm.css">-->
+<!--     -->
+<!-- -->
+<!--     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>-->
+<!--     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+<!--     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">-->
+<!-- -->
+<!-- -->
+<!--     <link rel="stylesheet" type="text/css" href="../css/mainSwiper.css">-->
+
+    <title>Code_together</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo logo"><span>Code <br>T<span class="header-crown">♔</span>gether</span></h1>
+        {% if not name %}
+        <nav class="header-nav" id="nav-for-normal">
+
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='/'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='subjects/'">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='accounts/signup/'">SIGN UP<button></li>
+            </ul>
+
+        </nav>
+        {% endif %}
+        {% if name %}
+        <nav class="header-nav" id="nav-for-member">
+
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='/'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='subjects/'">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='accounts/'">MYPAGE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button id="logOut" onclick="location.href='accounts/logout/'">LOG OUT<button></li>
+
+            </ul>
+
+        </nav>
+        {% endif %}
+    </header>
+
+    <section class="main-section-entire" id="mainPage">
+        <div class="main-section-container">
+            <div class="main-top-container">
+                <div class="main-video-container" style="text-align: center">
+                    <object type="text/html" class="main-video-container-item" data="//www.youtube.com/embed/uZQvxwfD6PA" allowfullscreen=""></object>
+                </div>
+                <!-- 이부분이 로그인 된 화면임 -->
+                {% if name %}
+                <div class="main-login-container" id="main-isLogined">
+                    <div class="main-login-item-logo">
+                        <h1 class="main-logo toHome" id="loginLogo"><span>Code <br>T<span class="header-crown">♔</span>gether</span></h1>
+                        <div class="main-isLogined-container">
+                            <p>{{ name }}님, 환영합니다</p>
+                            <div class="submitbtns-container">
+                                <button class="submitbtns" id="toMyPage" onclick="location.href='/accounts/'">마이페이지</button>
+                                {% if teacher %}
+                                <button class="submitbtns" onclick="location.href='/subjects/add/'">강의등록</button>
+                                {% endif %}
+                            </div>
+                            {% if not teacher %}
+<!--                            <button id="toBeTeacher">강사등록</button>-->
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+
+                {% if not name %}
+                <div class="main-login-container" id="toLogin">
+                    <div class="main-login-items">
+                        <div class="main-login-item-logo">
+                            <h1 class="main-logo toHome"><span>Code <br>T<span class="header-crown">♔</span>gether</span></h1>
+                        </div>
+
+                        <!-- 로그인 화면임  -->
+
+                        <form action="accounts/signin/" method="post">
+                        <div class="main-login-item-info" id="main-login">
+                            <span class="main-login-icons">
+                                <i class="fas fa-user"></i>
+                            </span>
+                            <input class="main-login-text" type="text" id="email" name="email" placeholder="E-mail">
+                        </div>
+                        <div class="main-login-item-info">
+                            <span class="main-login-icons">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <input class="main-login-text" type="password" id="password" name="password" placeholder="Password">
+                        </div>
+
+                        <div class="main-login-btns">
+                            <button type="submit" class="main-login-btn" id="main-login-btn">LOGIN</button>
+                            <button type="button" class="main-login-btn" id="main-login-naver">비밀번호 찾기</button>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <h2 class="main-subtitle">인기강의 - 지금까지 이런 강좌는 없었다!</h2>
+            <div class="swiper-container">
+
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        {% for subject in subject_order_list %}
+                        <div class="swiper-slide-item">
+                            <a href="{{ subject.get_absolute_url }}">
+                                <img class="popularitem" src="{{ subject.sub_image.url }}" alt="인기강의1">
+                                <div class="swiper-slide-title">
+                                    {{ subject.name }}
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-slide">
+                        {% for next_subject in subject_order_next_list %}
+                        <div class="swiper-slide-item">
+                            <a href="{{ next_subject.get_absolute_url }}">
+                                <img class="popularitem" src="{{ next_subject.sub_image.url }}" alt="인기강의1">
+                                <div class="swiper-slide-title">
+                                    {{ next_subject.name }}
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            <h2 class="main-subtitle">신규강의 - 놓치면 손해!</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        {% for subject in subject_famous_list %}
+                        <div class="swiper-slide-item">
+                            <a href="{{ subject.get_absolute_url }}">
+                                <img class="newitem" src="{{ subject.sub_image.url }}" alt="신규강의">
+                                <div class="swiper-slide-title">
+                                    {{ subject.name }}
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo logo"><span>Code <br>T<span class="header-crown">♔</span>gether</span></h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+
+</body>
+<!-- <script type="module" src="../js/mainPage.js"></script>
+<script type="module" src="../js/teacherForm.js"></script> -->
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script type="module" src="{% static 'js/mainPage.js' %}"></script>
+<!-- <script type="module" src="{% static 'js/teacherForm.js' %}"></script> -->
+</html>

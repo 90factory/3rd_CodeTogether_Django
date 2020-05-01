@@ -1,7 +1,4 @@
 from django.db import models
-
-
-from django.db import models
 from uuid import uuid4
 import datetime
 import os

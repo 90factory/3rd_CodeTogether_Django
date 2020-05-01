@@ -1,0 +1,24 @@
+.mypage-section-container { margin:0 auto; justify-content: center; align-items: center; display: flex; flex-direction: row; width: 65rem; background-color: whitesmoke; height: 100vh}
+
+.mypage-item { width: 50%;}
+.mypage-profile-box { margin: 0 auto 0 6rem; text-align: center; width: 20rem; height:20rem; background-color: oldlace; border-radius: 1rem;}
+.mypage-profile-box > div > svg { margin-top: 3.5rem; margin-bottom: 1rem; font-size: 7rem; color: #555; }
+.mypage-btn { margin-top: 1rem; width: 12rem; height: 2.5rem; border-radius: 0.5rem; background-color: teal; color: whitesmoke; font-weight: bold; transition: 0.3s; font-size: 0.8rem;}
+.mypage-btn:hover { background-color: tomato; width: 15rem;}
+
+.maypage-lectures-lists-box { margin: 0 6rem 0 auto; width: 23rem; height: 18rem; border-radius: 0.5rem; padding: 1rem;}
+
+.maypage-lectures-lists-box > h1 { margin-bottom: 2rem;}
+
+.maypage-lectures-lists-box a { height: 2.5rem; }
+.maypage-lectures-lists-box svg { margin-right: 1rem; color: #555; }
+
+.mypage-profile-box { height: 28rem; }
+
+.mypage-lectures-lists > ul > p { font-size: 1.2rem; font-weight: bold; }
+
+.mypage-lectures-lists > ul > p > svg { margin-right: 0.3rem; }
+
+.toSubject { color: teal; font-weight: bold; }
+.toSubject:hover { color: tomato; text-decoration: none; }
+a:hover { text-decoration: none;}

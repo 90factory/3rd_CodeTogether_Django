@@ -1,0 +1,74 @@
+input[type=text], textarea[type=textarea], .input { border-style: solid; border-radius: 0.5rem; border-width: 0 0 0 8px; padding: 12px; word-break: break-all; border-color: LightGray; background-color:rgba(211, 211, 211, 0.2); padding: 0.5rem; padding-left: 1rem; width: 300px; }
+textarea[type=textarea] { height: 80px;}
+
+section { height: 100%;}
+
+.lecture-form-entire { margin-top: 40px; margin-bottom: 0; height: 100%; }
+
+/* 강의 정보 */
+.lecture-form-container { display: flex; flex-direction: column; margin:auto; background-color: whitesmoke; width: 1000px; height: 150%;}
+.lecture-form-container > h1 { margin: 1rem auto; }
+.lecture-form-items { display: flex; flex-direction: column; margin-left: 4rem;}
+.lecture-form-item { display: flex; flex-direction: column; align-items: flex-start;}
+.lecture-form-item h1 { margin: 1rem; font-size: 1.2rem; font-weight: bold;}
+
+.lecture-form-item-subtitle { margin-bottom: 1rem; margin-left: 2rem;}
+.lecture-form-item-subtitle label { margin-left: 2rem; width: 8rem; font-size: 1rem; font-weight: bold;}
+.lecture-form-item-subtitle p { margin-left: 3rem; }
+.lecture-form-item-subtitle label svg { margin-right: 1rem; }
+.lecture-form-item-subtitle p svg { margin-right: 1rem; }
+
+
+.lecture-langs { margin-left: 7rem; }
+.input { margin-left: 10rem; }
+
+/* 교육 과정 */
+
+.lecture-form-item-subtitle-curr { display: flex; flex-direction: column; }
+.lecture-form-item-subtitle-curr p { margin: 2rem 0 0 2rem; font-size: 1rem; font-weight: bold; }
+.subjectForm-items-container { display: flex; flex-direction: row; }
+.subjectForm-items { display: flex; flex-direction: row; }
+.subjectForm-items > div { margin-right: 5px; }
+
+.subjectForm-lists { display: flex; flex-direction: column; }
+.curr { display: flex; flex-direction: row; margin-left: 2rem;}
+.curr li { margin-right: 1rem; margin-top: 1rem; width: 320px; }
+
+#subject-btn, #deleteBtn-js, #subjectForm-submitbtn { width: 80px; background-color: teal; height:30px; border-radius: 0.5rem; font-weight: bold; color: white; }
+
+.subjectForm-submit-btn { display: flex; }
+#subjectForm-submitbtn { margin: 2rem auto; }
+
+#subject-btn:hover, #deleteBtn-js:hover, #subjectForm-submitbtn:hover, #subjectForm-submitbtn:hover {
+    background-color: tomato;
+}
+
+/* 강의 사진 */
+
+.vImg { margin: 0.5rem 2.5rem; font-size: 5rem; color: whitesmoke;}
+
+
+#result { margin: 1rem 15rem; width: 10rem; height: 6rem; background-color: gray; border-radius: 0.5rem;}
+
+#result2, #result2 > img { margin: 1rem 8rem; width: 10rem; height: 6rem;}
+
+#result2 > img { border: teal solid 2px; border-radius: 0.5rem; }
+
+/* 메세지 */
+
+#msg1, #msg2, #msg3, #msg4, #msg5, #msg6, #msg7 { margin-left: 1rem; font-size: 0.8rem; color: crimson; font-weight: bold; }
+
+/* 모달 */
+
+
+.modal-container { height:100%; justify-content: center; align-items: center; display: flex; position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0, 0, 0, 0.3);
+}
+.modal { margin-top: -10rem; text-align: center; background: whitesmoke; width: 400px; height: 300px; padding: 2em; border-radius: 1em;
+}
+.modal-title { margin: 1rem; margin-bottom: 2rem;}
+.modal-msg { font-weight: bold; color: #555; margin: 0.5rem;}
+
+#msg-ok { margin-top: 2rem; background-color: teal; height: 2rem; width: 4rem; border-radius: 0.5rem; color: white; font-weight: bold;}
+#msg-ok:hover { background-color: tomato; }
+
+.footer-items {margin-top: 25rem}

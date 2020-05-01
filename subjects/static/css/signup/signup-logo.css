@@ -1,7 +1,0 @@
-.signup-type-entire {height: 100vh; display: flex; justify-content: center; align-items: center;}
-
-.signup-type-logo-container {
-    display: flex; text-align: center; font-size: 1.2rem;
-}  
-.signup-type-logo-container > h1> a { color:wheat }
-.signup-type-crown {color:tomato}

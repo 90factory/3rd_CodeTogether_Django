@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+{% load static %}
+{% load humanize %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 검색</title>
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header-footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/subjectSearch.css' %}">
+    <!-- <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/header-footer.css">
+    <link rel="stylesheet" href="../css/subjectSearch.css"> -->
+
+</head>
+<body>
+<header class="header">
+    <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+    {% if not name %}
+    <nav class="header-nav" id="nav-for-normal">
+        <ul class="header-nav-items">
+            <li class="header-nav-item">
+                <button onclick="location.href='/'">HOME</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/subjects/'">LECTURE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/signup/'">SIGN UP
+                    </button>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+    {% if name %}
+    <nav class="header-nav" id="nav-for-member">
+        <ul class="header-nav-items">
+            <li class="header-nav-item">
+                <button onclick="location.href='/'">HOME</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.replace('./')">LECTURE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/'">MYPAGE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/logout/'" id="logOut">LOG OUT
+                    </button>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+</header>
+<section class="subject-search-entire">
+    <div class="subject-search-container">
+        <form class="subject-search-form">
+            <input id="search-submit-keyword" type="search">
+            <button id="search-submit-btn" type="submit">🔍</button>
+        </form>
+        <div class="subject-lists">
+            <ul class="subject-list">
+                {% for subject in subjects %}
+                <li class="subject-item">
+                    <a href="{{ subject.get_absolute_url }}">
+                        <figure class="subject-background-img" style="background-image: url({{ subject.sub_image.url }})">
+                            <img class="subject-img" src="{{ subject.sub_image.url }}" alt="강의사진">
+                        </figure>
+                        <div class="subject-info">
+                            <div class="subject-name">{{ subject.name }}</div>
+                            <div class="subject-details">
+                                <div class="subject-teacher">{{ subject.teacher.name }}</div>
+                                <div class="subject-difficulty">{{ subject.diffculty }}</div>
+                                <div class="subject-price"><span class="won">￦</span>{{ subject.price|intcomma }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="pre-next-btns" class="pre-next-btns">
+            <ul id="numLists">
+
+                <li><button class="first-btn">❮❮</button></li>
+                <li><button class="pre-btn">❮</button></li>
+                {% for i in page_range %}
+
+                    <li><button id="{{ i }}" value="{{ i }}" onclick="location.href='?page={{ i }}'" class="page-num">{{ i }}</button></li>
+
+                {% endfor %}
+                <li><button class="next-btn">❯</button></li>
+                <li><button class="last-btn">❯❯</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal">
+            <div class="notice">
+                <h1 id="search-msg"></h1>
+                <button id="ok">확인</button>
+            </div>
+        </div>
+<footer class="footer">
+    <div class="footer-items">
+        <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+        <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+    </div>
+</footer>
+</section>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- <script type="module" src="../js/subjectSearch.js"></script>
+<script type="module" src="../js/default.js"></script> -->
+<script type="module" src="{% static 'js/subjectSearch.js' %}"></script>
+<script type="module" src="{% static 'js/default.js' %}></script>

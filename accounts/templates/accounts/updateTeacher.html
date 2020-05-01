@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="teacher-form-entire">
+        <div class="teacher-form-container">
+            <h1>❰ 강사정보수정 ❱</h1>
+            <form id="teacher-addInfo" enctype="multipart/form-data">
+                <div class="teacher-form-items">
+                    <div class="signup-form-item" id="signup-form-name">
+                        <div>
+                            <label for="name"><span class="descicon">♦</span>이름<span id="notice-name"></span></label>
+                            <p>{{ name }}</p>
+                        </div>
+                        <div>
+                            <input id="name" type="text" name="name" >
+                        </div>
+                    </div>
+
+                    <div class="signup-form-item" id="signup-form-phone">
+                        <div>
+                            <label for="phone"><span class="descicon">♦</span>핸드폰 번호<span id="notice-phone"></span> </label>
+                            
+                            <p>{{ phone }}</p>
+                        </div>
+                        <div>
+                            <input id="phone" type="text" name="phone">
+                        </div>
+                    </div>
+
+                    <div class="signup-form-item email" id="signup-form-email">
+                        <div>
+                            <label for="email"><span class="descicon">♦</span>이메일</label><span id="doNot">✱ 이메일은 변경할 수 없습니다 ✱</span>
+                        </div>
+                        <div id="signup-form-email-css">
+                            <p>{{ email }}</p>
+                        </div>                    
+                    </div>
+
+                    <div class="signup-form-item-3" id="signup-form-pw">
+                        <label for="pw"><span class="descicon">♦</span>비밀번호 </label>
+                        
+                        <input id="pw" type="password" name="pw" placeholder="현재 비밀번호를 입력하세요" required>
+                            
+                    </div>
+                    <div class="signup-form-item-3" id="signup-form-pwcheck">
+                            <label for="pwcheck"><span class="descicon">♦</span>새 비밀번호<span id="notice-pw"></span></label>
+                            <!-- 결과 입력하기 -->
+                            <input id="pw" type="password" name="pw">
+                    </div>
+                    <div class="signup-form-item-3">
+                        <p class="newPwCheck"><span class="descicon">♦</span>새 비밀번호 확인</p>
+                        <input id="pwcheck" type="password" name="pwcheck"> 
+                    </div>
+
+
+
+                    <div class="updateTeacherPhoto-box">
+                        <div class="updateTeacherPhoto">
+                            <div class="updateTeacherPhoto-items">
+                                <label for="teacher-photo"><span class="descicon">♦</span> 강사사진</label>
+                                <input type="file" multiple name="teacher-photo" id="teacher-photo"></input>
+                            </div>
+                            <div class="updateTeacherPhoto">
+                                <div id="result"><i class="fas fa-user vImg"></i></div>
+                                <div id="result2"></div>
+                            </div>
+                        </div>
+                        <div class="updateTeacherPhoto">
+                            <label for="teacher-desc"><span class="descicon">♦</span> 강사소개</label>
+                            <textarea name="teacher-desc" id="teacher-desc"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" id="teacher-form-submit">수정하기</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="{% static 'js/updateTeacher.js' %}"></script>
+</html>

@@ -45,6 +45,7 @@ class Subject(models.Model):
 class SubVideoUrl(models.Model):
     sub_id = models.ForeignKey(Subject, on_delete=models.CASCADE, related_name='video_urls')
     sub_video = models.URLField()
+    sub_video_name = models.CharField(max_length=255)
 
     class Meta:
         db_table = 'subvideos'

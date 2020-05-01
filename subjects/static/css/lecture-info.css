@@ -1,0 +1,46 @@
+.lecture-info-container { margin: 0 auto; display: flex; flex-direction: row; width: 65rem; height: 100%; background-color:whitesmoke;}
+
+.lecture-info-items { display: flex; flex-direction: column; justify-content: center; width: 50%; margin-bottom: auto;}
+
+.lecture-info-item { height: 28rem;}
+.lecture-info-card { background-color: oldlace; margin: 2rem auto 2rem auto; width: 85%; height: 90%; border-radius: 1rem;}
+.lecture-photo-box { display: flex;}
+
+.lecture-photo { margin: 1.5rem auto 0 auto; width: 350px; height: 200px;}
+
+.lecture-info-price { display: flex; flex-direction: column; align-items: center; justify-content: space-between; margin: 0 auto; text-align: center; width: 25rem; height: 3rem;}
+
+.lecture-info-price > div { margin-top: 0.5rem; margin-left:0rem; width: 25rem; font-size: 1.2rem; color: #555; font-weight: bold;}
+#lecture-info-price { color: crimson;}
+.lecture-info-price > div > span:nth-child(2) > svg {font-size: 1.5rem; color: tomato; margin-left: 7rem;}
+.lecture-info-price > div > span:nth-child(3) > svg {font-size: 1.5rem; color: gold; margin-left: 0.5rem;}
+
+.lecture-info-price > button { margin-top: 1rem; border-radius: 0.5rem; background-color: coral; color: whitesmoke; width: 25rem; height: 6rem; padding: 0.5rem; font-size: 1.2rem; font-weight: bold; animation: 0.3s;}
+.lecture-info-price > button:hover { width: 25rem; background-color: teal; color: cornsilk;}
+#lecture-info-price { font-size: 1.5rem;}
+
+.lecture-info-subitem { display: flex; flex-direction: column; margin: 2rem;}
+
+.lecture-info-subitem > h3 { font-size: 2rem; margin: 2rem 0}
+.lecture-info-subitem > div { display: flex; flex-direction: column; }
+.lecture-info-subitem > div > ul { margin: 2rem 1rem; display: flex; flex-direction: column;}
+.lecture-info-subitem > div > ul > li:nth-child(2n) { margin-left: 4rem; font-size: 1.5rem; font-weight: bold; }
+.lecture-info-subinfo { font-size: 1.5rem; margin-bottom: 1rem;}
+.lecture-info-spac { display: flex; flex-direction: row;}
+.lecture-info-spac > li { margin-right: 1.2rem; }
+.lecture-info-spac > span { font-size: 1.2rem; }
+
+#payBtn { margin:2rem; width: 5rem; height: 2rem; background-color: teal; color: white; font-weight: bold; font-size: 1rem;}
+
+
+
+
+.modal-container { height:100%; justify-content: center; align-items: center; display: flex; position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0, 0, 0, 0.7);
+}
+.modal { margin-top: -10rem; text-align: center; background: whitesmoke; width: 600px; height: 400px; padding: 2em; border-radius: 1em;
+}
+.modal-title { margin: 5rem; font-size: 2rem; margin-bottom: 2rem;}
+.notice input { width: 15rem; height: 2rem; border-radius: 0.5rem; padding-left: 2rem;}
+#priceBtn { margin-top: 2rem; background-color: teal; height: 2.4rem; width: 4rem; border-radius: 0.5rem; color: white; font-weight: bold;}
+#priceBtn:hover { background-color: tomato; }
+

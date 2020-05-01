@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="{% static 'css/default.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet"  href="{% static 'css/signUpForm.css' %}">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+        <nav class="header-nav" id="nav-for-member">
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='home.html'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='subjectSearch.html'">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='myPage.html'">MYPAGE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button id="logOut">LOG OUT<button></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <section class="signup-form-entire">
+        <div class="signup-form-container">
+            <div class="signup-form-box-border">
+                <div class="signup-type-logo-container">
+                    <h1 class="signup-type-logo"><a href="#"><span>Code <br>T<span class="signup-type-crown">♔</span>gether</span></a></h1>
+                    <h1 id="signup-type-title">정보수정</h1>
+                    <h2>수정할 내용을 입력하세요</h2>
+                </div>
+
+                <form class="signup-form">
+                    <div class="signup-form-items">
+                        <div class="signup-form-item" id="signup-form-name">
+                            <label for="name"><i class="far fa-caret-square-right"></i>이름<span id="notice-name"></span> </label>
+                            <div>
+                                <input id="signup-form-name" type="text" name="name" required >
+                                <span class="signup-form-check" id="phonecheck-icon"><i class="fas fa-check"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="signup-form-item" id="signup-form-phone">
+                            <label for="phone"><i class="far fa-caret-square-right"></i>핸드폰 번호<span id="notice-phone"></span> </label>
+                            <div>
+                                <input id="phone" type="text" name="phone" onfocus="focusFunction()" onblur="blurFunction()" required>
+                                <span class="signup-form-check" id="phonecheck-icon"><i class="fas fa-check"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="signup-form-item" id="signup-form-email">
+                            <label for="email"><i class="far fa-caret-square-right"></i>이메일<span id="email-change-notice">(이메일 변경 시 재인증이 필요합니다)</span><span id="notice-email"></span></label>
+                            <div id="signup-form-email-css">
+                                <div>
+                                    <input id="email" type="text" name="email" required>
+                                    <span class="signup-form-check" id="emailcheck-icon"><i class="fas fa-check"></i></span>
+                                </div>
+                                <button id="emailcheck" name="emailcheck">중복확인</button>
+                            </div>
+                            <p id="email-check-result"></p>
+                        
+                        </div>
+
+                        <div class="signup-form-item" id="signup-form-pw">
+                            <label for="pw"><i class="far fa-caret-square-right"></i>비밀번호 </label>
+                        <div>
+                            <input id="pw" type="password" name="pw" required>
+                            <span class="signup-form-check" id="emailcheck-icon"><i class="fas fa-check"></i></span>
+                        </div>
+                        </div>
+
+                        <div class="signup-form-item" id="signup-form-pwcheck">
+                            <label for="pwcheck"><i class="far fa-caret-square-right"></i>비밀번호 확인 </label>
+                            <!-- 결과 입력하기 -->
+                            <div>
+                                <input id="pwcheck" type="password" name="pwcheck" required>
+                                <span class="signup-form-check" id="pwcheck-icon"><i class="fas fa-check"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="signup-form-submit-btn">
+                        <button id="signup-form-submit" type="submit">수정하기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>        
+    </footer> 
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="{% static 'js/signUpForm.js' %}"></script>
+
+</html>

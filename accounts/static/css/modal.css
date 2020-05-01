@@ -1,0 +1,39 @@
+.modal {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.notice > button {
+    margin-top: 3rem;
+    width: 5rem;
+    height: 3rem;
+    background-color: teal;
+    color: whitesmoke
+}
+
+.notice {
+    margin-top: 20rem;
+    text-align: center;
+    background: white;
+    width: 30vw;
+    height: 30vh;
+    padding: 2em;
+    border-radius: 1em;
+}
+
+.notice > h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.notice > hi {
+    font-size: 1.2rem;
+    text-align: center;
+}

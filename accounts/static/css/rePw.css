@@ -1,0 +1,93 @@
+.re-password, .re-password2 {
+    height: 80vh;
+    
+}
+
+.re-password-info-1, .re-password-info-2 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.re-password-email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.re-password-email > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.re-password-email > div > div {
+    margin: 2rem 0 2rem 2rem;
+}
+
+.re-password2-notice {
+    margin-top:20rem;
+    text-align: center;
+    background-color: white;
+    width: 600px;
+    height: 800px;
+    padding: 2em;
+    border-radius: 1rem;
+}
+
+.re-password2-notice > p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 2rem;
+}
+.pwcheck-box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.re-password-password {
+    display: flex;
+    flex-direction: column;
+}
+
+.re-password-item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-left: 4rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.second {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+ 
+}
+button { margin: 2rem auto; width: 6rem; height: 3rem; background-color: teal; color: white; font-weight: bold; border-radius: 0.3rem; font-size: 1rem; }
+
+.notice > h1 {
+    margin: 2rem;
+}
+
+.notice p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.5rem;
+    
+}
+
+.notice { margin-top: 12rem; width: 600px; height: 400px; }
+
+#email, #pw, #pwcheck { background-color: oldlace; width: 300px; height: 30px; border-radius: 0.5rem; padding: 0.5rem; padding-left: 2rem; font-size: 1rem; margin:2rem; }
+
+#submit-pw-btn { width: 7rem; height: 3rem; border-radius: 0.3rem; color: whitesmoke; font-weight: bold; background-color: teal; }
+
+#notice-share { margin-top: 1.5rem; font-size: 1.2rem; color:crimson;}
+
+#att { margin-top: 2rem; margin-bottom: -1rem; color:crimson;  }

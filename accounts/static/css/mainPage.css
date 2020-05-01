@@ -1,0 +1,25 @@
+.main-section-container { display : flex; flex-direction: column; background-color: whitesmoke;}
+.main-top-container {display: flex; margin: 5rem auto 0 auto;}
+.main-video-container-item { width: 45rem; height: 20rem;}
+
+.submitbtns-container { display: flex; flex-direction: column; }
+.submitbtns { margin: 0.5rem; width: 15rem; height: 2.5rem; font-size: 0.8rem; font-weight: bold; background-color: teal; color: whitesmoke; }
+.main-isLogined-container > p { font-size: 1.2rem; margin: 0.5rem auto; }
+.toHome:hover { cursor: pointer; }
+
+.main-login-item-logo { text-align: center;}
+.main-login-container { display: flex; justify-content: center; width: 20rem; height: 20rem;}
+.main-login-items { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: 30rem; margin-left: 5rem;}
+.main-logo > a { color: whitesmoke; }
+.main-login-item-info { display:flex; align-items: center; background-color: wheat; height: 2.3rem; margin-top: 0.5rem; padding: 0.2rem; width: 15rem;}
+.main-login-icons { font-size: 1.2rem; margin-left: 0.5rem; margin-right: 0.5rem;}
+.main-login-text { font-size: 1rem; width: 15rem; line-height: 2rem; background-color: wheat;}
+.main-login-btns { display: flex; flex-direction: column; width: 15rem; height: 4rem; margin-top: 0.5rem;}
+.main-login-btn {  margin-top: 0.5rem; background-color: teal; color:whitesmoke; width: 15rem; line-height: 2.2rem; font-weight: bold; }
+
+.more-container { text-align: center;}
+.more-btn { text-align: center; margin-top: 4rem; margin-bottom: 5rem; width: 15rem; height: 4rem; font-size: 1.3rem; font-weight: bold; background-color: tomato; color: whitesmoke; transition: 0.5s; border-radius: 1.2rem;}
+.more-btn:hover { border-radius: 1.2rem; width: 20rem; color: teal; background-color: wheat;}
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myPage.css' %}">
+    <link rel="stylesheet" href="{% static 'css/myPage_teacher' %}">
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+    <title>Code_together</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+        <nav class="header-nav" id="nav-for-member">
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='home.html'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='subjectSearch.html'">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='myPage.html'">MYPAGE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button id="logOut">LOG OUT<button></li>
+            </ul>
+        </nav>
+    </header> 
+    
+    <section class="mypage-section-entire">
+        <div class="mypage-section-container">
+            <div class="mypage-item">
+                <div class="mypage-profile-box">
+                    <div><i class="fas fa-user-circle"></i></div>
+                    <!-- 정보수정 클릭 시 signup-form.html 로 연결 -->
+                    <p> {{ name }}님<br id="mypage-msg"> 오늘도 좋은 하루 보내세요! </p>
+                    <button class="mypage-btn" id="mypage-update-btn" onclick ="location.href='/src/html/signUp/signUpForm.html'">내 정보 수정 <i class="fas fa-pen-square"></i></button>
+                    <button class="mypage-btn" id="mypage-subject-btn">강의 등록</button>
+                    <button class="mypage-btn" id="out">회원탈퇴</button>
+                </div>
+            </div>
+            <div id="mypage-edit-form"></div>
+            <div class="mypage-item">
+                <div class="maypage-lectures-lists-box">
+                    <h1>강의목록</h1>
+                    <div class="mypage-lectures-lists">
+                        <ul>
+                            {% for lecture in lecture_list %}
+                            <li><a href="#"><span><i class="fas fa-arrow-circle-right"></span></i>{{ lecture.name }}</a><button>수정</button></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>        
+    </footer> 
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="{% static 'js/myPage_teacher.js' %}"></script> -->
+</html>

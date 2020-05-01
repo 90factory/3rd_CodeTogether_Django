@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/mainPage_teacherFrom.css' %}">
+</head>
+<body>
+    <section class="teacher-form-entire">
+        <div class="teacher-form-container">
+            <h1>❰ 강사등록 ❱</h1>
+            <div>
+                <p>{{name}}님!</p>
+                <p>강의를 등록하기 위해서는 아래 정보가 필요해요!</p>
+            </div>
+            <form id="teacher-addInfo" enctype="multipart/form-data">
+                <label for="teacher-photo"><span class="descicon">♦</span> 강사사진</label>
+                    <input type="file" multiple name="teacher-photo" id="teacher-photo"></input>
+                    <div id="result"><i class="fas fa-user vImg"></i></div>
+                    <div id="result2"></div>
+                <label for="teacher-desc"><span class="descicon">♦</span> 강사소개</label>
+                    <textarea name="teacher-desc" id="teacher-desc" placeholder="강사님을 소개해주세요!"></textarea>
+                <button type="submit" id="teacher-form-submit">등록하기</button>
+            </form>
+        </section>
+        <section class="modal-container">
+            <div class="modal">
+                <div class="modal-notice">
+                    <div>
+                        <div>
+                            <figure class="teacher-background-photo">
+                                <img class="teacher-img" alt="선생님 사진">
+                            </figure>
+                        </div>
+                        <h1 class="modal-title">✨환영합니다🎉 {{name}}강사님!</h1>
+                    </div>
+                    <p class="modal-text">바로 강의를 등록하시겠어요?</p>
+                    <div class="btns">
+                        <button class="modal-btn modal-btn-yes">지금할게요!</button>
+                        <button class="modal-btn modal-btn-no">다음에할게요!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="{% static 'js/mainPage.js' %}"></script>
+<script type="module" src="{% static 'js/mainPage_teacherForm.js' %}"></script>
+</html>

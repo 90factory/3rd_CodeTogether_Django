@@ -1,0 +1,22 @@
+
+.main-subtitle { font-size: 2rem; margin: 5rem auto 0 auto; color: teal; font-weight: bold;
+}
+
+.swiper-container {
+ width: 65rem; height: 20rem; display: flex; justify-content: center;
+}
+
+
+.swiper-slide {  display: flex; justify-content: center; text-align: center; font-size: 18px;
+
+
+  }
+.swiper-slide-item, .swiper-slide-item > a { display: flex; align-items: center; flex-direction: column; margin: auto 1rem; width: 18rem;
+}
+ 
+
+.swiper-slide-title { padding-top: 0.3rem; width: 100%; height: 3rem; text-align: center; color: teal; font-weight: bold; background-color: whitesmoke;
+}
+
+.popularitem, .newitem { margin: 1.5rem auto; width: 20rem; height: 12rem; background-color: whitesmoke;
+}

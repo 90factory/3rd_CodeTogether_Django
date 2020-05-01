@@ -1,0 +1,31 @@
+.teacher-form-entire { margin: 2rem; }
+.teacher-form-container h1 { text-align: center; font-size: 1.2rem; }
+.teacher-form-items { display: flex; flex-direction: column; margin: 2rem; }
+
+.signup-form-item { display: flex; flex-direction: column; margin: 0.5rem; }
+.signup-form-item > div { display: flex; flex-direction: row; }
+.signup-form-item label { width: 8rem; }
+.signup-form-item-3 { display: flex; margin: 0.5rem; }
+.signup-form-item-3 label { width: 9rem; }
+.signup-form-item-3 p {width: 10rem; }
+.signup-form-item-3 input { width: 15rem; font-size: 1rem; padding: 0.3rem; padding-left: 1rem;}
+
+.updateTeacherPhoto-box { display: flex; margin: 0.5rem; flex-direction: column; }
+
+.signup-form-item div:nth-child(2) input, #signup-form-email-css > p { margin: 0.5rem; margin-left: 9rem; padding: 0.3rem; padding-left: 2rem; width: 15rem;}
+
+#signup-form-email { display: flex; flex-direction: column; }
+#teacher-addInfo { display: flex; justify-content: center; }
+
+.vImg { margin: 2rem auto; font-size: 6rem; color: whitesmoke; }
+
+#result { width:20rem; height: 10rem; background-color: lightgray; border-radius: 0.5rem; margin: 2rem auto; display: flex; justify-content: center;}
+
+#result2 { margin: 2rem auto; width: 20rem; height: 10rem; }
+#result2 > img { margin: 2rem auto; width: 20rem; height: 10rem; }
+#teacher-desc {
+    margin: 1rem auto 1rem auto; width: 90%; height: 100px; font-size: 1.2rem; padding: 2rem;
+}
+#teacher-form-submit { width: 5.5rem; margin: auto; height: 2.5rem; background-color: teal; color: white; font-weight: bold; border-radius: 0.5rem;}
+
+#teacher-form-submit:hover { background-color: tomato; }

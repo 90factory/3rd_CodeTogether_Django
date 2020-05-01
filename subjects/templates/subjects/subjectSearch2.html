@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load humanize %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/default.css">
+    <link rel="stylesheet" href="../css/header_footer.css">
+    <link rel="stylesheet" href="../css/subjectSearch.css">
+    <link rel="stylesheet" href="../css/modal.css">
+
+    <title>Document</title>
+</head>
+<body>
+<header class="header">
+    <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+    {% if not name %}
+    <nav class="header-nav" id="nav-for-normal">
+        <ul class="header-nav-items">
+            <li class="header-nav-item">
+                <button onclick="location.href='/'">HOME</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/subjects/'">LECTURE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/signup/'">SIGN UP
+                    <button>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+    {% if name %}
+    <nav class="header-nav" id="nav-for-member">
+        <ul class="header-nav-items">
+            <li class="header-nav-item">
+                <button onclick="location.href='/'">HOME</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.replace('./')">LECTURE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/'">MYPAGE</button>
+            </li>
+            <span class="header-div">❙</span>
+            <li class="header-nav-item">
+                <button onclick="location.href='/accounts/logout/'" id="logOut">LOG OUT
+                    </button>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+</header>
+<section class="lecture-search-entire">
+    <div class="lecture-search-container">
+        <form class="lecture-search-form">
+            <input id="search-submit-keyword" type="search">
+            <button id="search-submit-btn" type="submit">🔍</button>
+        </form>
+        <div class="lecture-search-items">
+            {% for subject in subjects %}
+            <div class="lecture-search-item">
+                <a href="{{ subject.get_absolute_url }}">
+                    <img class="lecture" src="{{ subject.sub_image.url }}" alt="인기강의1">
+                    <div class="lecture-title">
+                        <p>{{ subject.name }}</p>
+                            <p>{{ subject.difficulty }}</p>
+                        <p>가격 :{{ subject.price|intcomma }}원  강사: {{ subject.teacher.name }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div id="pre-next-btns">
+            {% if subjects.has_previous %}
+            <a href="?page=1">맨앞으로</a>
+            <a href="?page={{ subjects.previous_page_number }}">이전으로</a>
+            {% endif %}
+            <span>{{ subjects.number }}</span>
+            <span>/</span>
+            <span>{{ subjects.paginator.num_pages }}</span>
+            {% if subjects.has_next %}
+            <a href="?page={{ subjects.next_page_number }}">다음으로</a>
+            <a href="?page={{ subjects.paginator.num_pages }}">맨뒤로</a>
+            {% endif %}
+        </div>
+
+        <div class="modal">
+            <div class="notice">
+                <h1 id="search-msg"></h1>
+                <button id="ok">확인</button>
+            </div>
+        </div>
+
+
+        <!-- <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/java/java-verde.jpg" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/java/java-verde.jpg" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/python/python_mini_browser_web-512.png" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/python/python_mini_browser_web-512.png" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/python/python_mini_browser_web-512.png" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/4.jpg" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/4.jpg" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div>
+        <div class="lecture-search-item">
+            <a href="#">
+                <img class="lecture" src="/src/images/4.jpg" alt="인기강의1">
+                <div class="lecture-title">
+                    title
+                </div>
+            </a>
+        </div> -->
+<!--        <div class="more-container">-->
+<!--            <button class="more-btn"><i class="fas fa-arrow-circle-down"></i>더보기</button>-->
+<!--        </div>-->
+    </div>
+
+</section>
+<footer class="footer">
+    <div class="footer-items">
+        <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+        <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+    </div>
+</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="../../static/js/subjectSearch.js"></script>
+</html>

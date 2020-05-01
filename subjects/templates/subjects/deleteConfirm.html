@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/subjectSearch.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+
+        <nav class="header-nav" id="nav-for-member">
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='/'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.replace('./')">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='/accounts/'">MYPAGE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='accounts/logout/'" id="logOut">LOG OUT<button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section>
+        <form action="" method="post">
+        <div>{{ name }}</div>
+        <div>{{ teacher }}</div>
+
+        <input type="submit" value="삭제">
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="module" src="{% static 'js/subjectSearch.js' %}"></script>
+</html>

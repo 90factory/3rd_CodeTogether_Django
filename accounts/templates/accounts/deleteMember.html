@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+    <link rel="stylesheet" href="{% static 'css/deleteMember.css' %}">
+
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+    <title>Code_together</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-logo"><a href="/"><span>Code <br>T<span class="header-crown">♔</span>gether</span></a></h1>
+        <nav class="header-nav" id="nav-for-member">
+            <ul class="header-nav-items">
+                <li class="header-nav-item"><button onclick="location.href='/'">HOME</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='/subjects/'">LECTURE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button onclick="location.href='/accounts/'">MYPAGE</button></li>
+                <span class="header-div">❙</span>
+                <li class="header-nav-item"><button id="logOut" onclick="location.href='/logout/'">LOG OUT<button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="member-delete" id="deleteMember-toCheck">
+        <div class="modal">
+            <div class="toVerify notice">
+                <h1 id="toDeletnotice">본인의 정보를 입력하세요</h1>
+                <form id = "Auth-person" action="/accounts/delete/" method="post">
+                    <div class="Auth-person">
+                        <div class="auth-person-info">
+                            <label for ="email">이메일 : </label>
+                            <input id="email" type="text" name="name" placeholder="example@naver.com" required>
+                        </div>
+                        <div class="auth-person-info">
+                            <label for = "pw">비밀번호 : </label>
+                            <input id="pw" type="password" name="password" placeholder="password" required>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="authPersonInfoBtn">확인</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="member-delete" id="deleteMember-complete">
+        <div class="modal" id="deleteMember-notice">
+            <div class="notice deleteComplete">
+                <h1 id="delete-member-notice">탈퇴완료</h1>
+                <p id="sayGoobye"></p>
+                <button id="delete-member-ok">확인</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-items">
+            <h1 class="footer-logo"><a href="#"><span>Code <br>T<span class="footer-crown">♔</span>gether</span></a></h1>
+            <div class="footer-rights">© CodeT♔gether ALL RIGHTS RESERVED</div>
+        </div>
+    </footer>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="{% static 'js/deleteMember.js' %}" type="module"></script>
+</html>

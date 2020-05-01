@@ -1,0 +1,37 @@
+p { font-size: 1rem; font-weight: bold; margin: 0.3rem 0;}
+.signup-form span { margin-left: 2rem; font-size: 1.4rem; font-weight: bold; color: crimson; }
+.signup-type-entire {height: 100vh; display: flex; justify-content: center; align-items: center;}
+
+.signup-type-logo-container {
+    display: flex; text-align: center; font-size: 1.2rem;
+}  
+.signup-type-logo-container > h1> a { color:wheat }
+.signup-type-crown {color:tomato}
+
+
+.signup-form-container { display: flex; flex-direction: column; width: 65rem;  margin: 0 auto; background-color: whitesmoke; }
+
+.signup-type-logo-container { display: flex; flex-direction: column; margin: 6rem auto 0 auto; }
+.signup-type-logo-container > h1:nth-child(2) {margin-top: 1rem; font-size: 4rem; font-weight: bold;}
+
+.signup-form { display: flex; flex-direction: column; justify-content: start; align-items: center; margin: 0 10rem;}
+.signup-form-item { width: 50rem; display: flex; flex-direction: column; margin-top: 3.5rem;}
+.signup-form-item > label { font-size: 1.8rem; font-weight: bold;}
+.signup-form-item > div { margin: 1rem 0 0 8rem; width: 40rem; }
+.signup-form-item > div > input {margin-top: 1rem; padding: 0 3rem; width: 28rem; height: 4rem; border-radius: 0.5rem; font-size: 1.5rem; font-weight: bold; }
+.signup-form-item > label > svg { margin-right: 1rem; color: orangered; text-align: center;}
+
+
+#signup-type-title { font-size: 3rem;}
+#emailcheck { width: 10rem; height: 4rem; font-size: 2rem; color: white }
+
+#signup-form-email-css { display: flex; flex-direction: row; align-items: center; width: 50rem;}
+#signup-form-email-css > div> input { margin-top: 1rem; padding: 0 3rem; width: 28rem; height: 4rem; border-radius: 0.5rem; font-size: 1.5rem;}
+
+#emailcheck { margin-top: 1rem; width: 10rem; height: 4rem; font-size: 2rem; font-weight: bold; color: crimson }
+
+#signup-form-submit { margin-top: 5rem; margin-bottom: 3rem; width: 20rem; border-radius: 0.5rem; height: 5rem; font-size: 2rem; font-weight: bold; color: teal; background-color: wheat; transition: 0.3s;}
+
+#signup-form-submit:hover { width: 25rem; height: 6rem; background-color: coral; color: white;}
+
+.newPwCheck { margin-left: -8rem; margin-top: 1.2rem; font-size: 1.8rem; }

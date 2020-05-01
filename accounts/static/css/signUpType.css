@@ -1,0 +1,15 @@
+.signup-type-entire {height: 100vh; display: flex; justify-content: center; align-items: center;}
+
+.signup-type-logo-container {
+    display: flex; text-align: center; font-size: 1.2rem; margin: 1rem auto 0 auto;
+}  
+.signup-type-logo-container > h1> a { color:wheat;}
+.signup-type-crown {color:tomato}
+
+
+.signup-type-container { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; width: 35rem; height: 35rem; margin: auto; background-color: darkslateblue;}
+
+#singup-icon { font-size: 5rem; color: floralwhite; margin: 1rem 0;} 
+#singup-normal-btn, #singup_naver { width: 17rem; height: 3rem; margin: 0.2rem; background-color: bisque; font-size: 1.2rem; font-weight: bold; transition: 0.3s;} 
+
+#singup-normal-btn:hover, #singup_naver:hover { width: 20rem; background-color: gold; color: #555; }

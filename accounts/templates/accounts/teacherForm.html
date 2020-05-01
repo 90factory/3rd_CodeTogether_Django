@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="teacher-form-entire">
+        <div class="teacher-form-container">
+            <h1>강사등록</h1>
+            <form id="teacher-addInfo" enctype="multipart/form-data">
+                <label for="teacher-photo">강사사진</label>
+                    <input type="file" multiple name="teacher-photo" id="teacher-photo"></input>
+                    <div id="result"></div>
+                <label for="teacher-desc">강사소개</label>
+                    <textarea name="teacher-desc" id="teacher-desc"></textarea>
+                <button type="submit" id="teacher-form-submit">등록하기</button>
+            </form>
+            <div id="teacher-info-check">
+                <ul>
+                    <li><span>강사사진: </span>{{teacher.name}}</li>
+                    <li><span>강사소개: </span>{{teacher.desc}}</li>
+                </ul>
+                <!-- <button>수정</button> -->
+                <button onclick="changePage()">완료</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

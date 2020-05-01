@@ -1,0 +1,49 @@
+.teacher-form-entire{ height:100%; justify-content: center; align-items: center; display: flex; position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0, 0, 0, 0.3);
+}
+.teacher-form-container{ text-align: center; background: white; width: 30vw; height: 650px; padding: 2em; border-radius: 1em;
+}
+
+.teacher-form-container >h1 { font-size: 1.5rem; margin: 0.5rem; color: teal; font-weight: bold;
+}
+.teacher-form-container > div { margin-top: 1.5rem; }
+.teacher-form-container p {
+    font-size: 1rem; margin: 0.5rem;
+}
+.teacher-form-container label {
+    margin: 1rem; font-size: 1rem;
+}
+.descicon {
+    font-size: 1rem; color:teal;
+}
+
+.vImg {
+    margin: 0.5rem auto; font-size: 5rem; color: whitesmoke;
+}
+#teacher-addInfo { font-size: 2rem; font-weight: bold; margin: 1rem; display: flex; flex-direction: column; align-items: flex-start;
+}
+
+#result { width:10rem; height: 6rem; background-color: lightgray; border-radius: 0.5rem; margin: 1rem auto;}
+
+#result2, #result2 > img { margin: 1rem auto; width: 10rem; height: 6rem;}
+
+#result2 > img { border: teal solid 2px; border-radius: 0.5rem; }
+
+#teacher-desc {
+    margin: 0rem auto 0.5rem auto; width: 90%; height: 10rem; font-size: 1rem; padding: 1rem;
+}
+
+#teacher-form-submit { width: 5rem; height:2.5rem; font-size: 0.8rem; background-color: teal; color: whitesmoke; font-weight: bold; margin: 1rem auto; border-radius: 0.5rem; cursor: pointer;}
+#teacher-form-submit:hover { background-color: tomato;}
+
+.modal-container { height:100%; justify-content: center; align-items: center; display: flex; position: fixed; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0, 0, 0, 0.3);
+}
+.modal { text-align: center; background: whitesmoke; width: 400px; height: 300px; padding: 2em; border-radius: 1em;
+}
+
+.teacher-img { display: none; }
+.teacher-background-photo { border: teal solid 3px; width: 70px; height: 70px; border-radius: 50%; background-position: center; background-repeat: no-repeat; background-size: cover; margin-top: 3rem;}
+.modal-title { margin-top: 2rem; }
+.modal-notice figure { margin: 0 auto; }
+.modal-text { font-weight: bold; color: #555; }
+.btns { display: flex; flex-direction: column; width: 10rem; justify-content: center; margin: 0.5rem auto; margin-top: 1rem;}
+.modal-btn { margin-top: 0.3rem; background-color: teal; height: 2rem; color: white; font-weight: bold;}
