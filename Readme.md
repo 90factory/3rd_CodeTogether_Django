@@ -27,6 +27,6 @@
 3. `python manage.py runserver` 를 사용 로컬호스트에 포트 8000번으로 실행 가능하다.
 
 #### 코드투게더 백엔드 스프링 부분: [CodeTogether Backend Spring](https://github.com/90factory/3rd_CodeTogether_Spring)
-#### 코드투게더 프론트엔드 부분: [CodeTogether Frontend](https://github.com/90factory/3rd_CodeTogether_Front)
+#### 코드투게더 프론트엔드 부분: [CodeTogether Frontend](https://github.com/90factory/3rd_CodeTogether_Frontend)
 
 
